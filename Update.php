@@ -40,7 +40,7 @@ if( isset($_POST["submit"])) {
             <ul>
                 <li>
                     <label for="Nama Barang">Nama Barang: </label>
-                    <input type="text" name="Nama Barang" id="Nama Barang" value="<?= $brg["Nama Barang"];?>">
+                    <input type="text" name="nama_barang" id="Nama Barang" value="<?= $brg["Nama Barang"];?>">
                 </li>
                 <li>
                     <label for="Berat">Berat: </label>

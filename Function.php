@@ -2,7 +2,8 @@
 // koneksi ke database
 $conn = mysqli_connect("localhost", "root", "", "db_penjualan");
 
-function query($query){
+function query($query)
+{
     global $conn;
     $result = mysqli_query($conn, $query);
     $rows = [];
@@ -11,22 +12,20 @@ function query($query){
     }
     return $rows;
 }
-function ubah($data) {
+function ubah($data)
+{
     global $conn;
     //simpan data dari tiap elemen dalam form
-        $id = $data["id"];
-        $Nama_Barang = ($data["Nama Barang"]);
-        $Berat = ($data["Berat"]);
-        $Stok = ($data["Stok"]);
+    $id = $data["id"];
+    $Nama_Barang = $data['nama_barang'];
+    $berat = $data['Berat'];
+    $stok = $data['Stok'];
     // query UPDATE data
-        $query ="UPDATE tb_barang SET
-                    Nama Barang = '$Nama_Barang',
-                    Berat = '$Berat',
-                    Stok = $Stok
-                    WHERE id = $id ";  
+    $conn->query("UPDATE tb_barang SET `Nama Barang` = '$Nama_Barang', Berat = '$berat', Stok = $stok WHERE id = $id ");
+    return mysqli_affected_rows($conn);
+}
 
-        mysqli_query($conn, $query);
-        
-        return mysqli_affected_rows($conn);
-    }
-?>
+// ubah field Nama Barang menjadi nama_barang, Berat menjadi berat, Stok menjadi stok
+// tambah field harga
+// tampilkan barang dengan harga tertinggi dan terendah
+// tambah method hapus
