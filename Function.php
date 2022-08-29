@@ -17,15 +17,23 @@ function ubah($data)
     global $conn;
     //simpan data dari tiap elemen dalam form
     $id = $data["id"];
-    $Nama_Barang = $data['nama_barang'];
-    $berat = $data['Berat'];
-    $stok = $data['Stok'];
+    $nama_barang = $data['nama_barang'];
+    $berat = $data['berat'];
+    $stok = $data['stok'];
+    $harga = $data['harga'];
     // query UPDATE data
-    $conn->query("UPDATE tb_barang SET `Nama Barang` = '$Nama_Barang', Berat = '$berat', Stok = $stok WHERE id = $id ");
+    $conn->query("UPDATE tb_barang SET nama_barang = '$nama_barang', berat = '$berat', stok = $stok, harga = $harga WHERE id = $id ");
     return mysqli_affected_rows($conn);
 }
 
-// ubah field Nama Barang menjadi nama_barang, Berat menjadi berat, Stok menjadi stok
-// tambah field harga
-// tampilkan barang dengan harga tertinggi dan terendah
+function hapus($id) {
+    global $conn;
+
+    mysqli_query($conn, "DELETE FROM tb_barang WHERE id= $id");
+    
+return mysqli_affected_rows($conn); 
+}
+// ubah field Nama Barang menjadi nama_barang, Berat menjadi berat, Stok menjadi stok /finish
+// tambah field harga /finish
+// tampilkan barang dengan harga tertinggi dan terendah /finish
 // tambah method hapus

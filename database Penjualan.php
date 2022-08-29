@@ -1,6 +1,6 @@
 <?php
 require 'Function.php'; 
-$barang = query("SELECT * FROM tb_barang ORDER BY Stok");
+$barang = query("SELECT * FROM tb_barang ORDER BY harga DESC");
 
 ?>
 <!DOCTYPE html>
@@ -18,6 +18,7 @@ $barang = query("SELECT * FROM tb_barang ORDER BY Stok");
             <th>Nama Barang</th>
             <th>Berat</th>
             <th>Stok</th>
+            <th>Harga</th>
             <th>ERORR</th>
         </tr>
 
@@ -25,11 +26,13 @@ $barang = query("SELECT * FROM tb_barang ORDER BY Stok");
         <?php foreach ($barang as $row):?>
         <tr>
             <td><?= $i; ?></td>
-            <td><?= $row["Nama Barang"]; ?></td>
-            <td><?= $row["Berat"]; ?></td>
-            <td><?= $row["Stok"]; ?></td>
+            <td><?= $row["nama_barang"]; ?></td>
+            <td><?= $row["berat"]; ?></td>
+            <td><?= $row["stok"]; ?></td>
+            <td><?= $row["harga"]; ?></td>
             <td>
                 <a href="Update.php?id=<?= $row["id"];?>" onclick="return confirm('apakah anda yakin ingin mengubah data ini?')">Update</a>
+                <a href="Delete.php?id=<?= $row["id"];?>" onclick="return confirm('apakah anda yakin ingin mengubah data ini?')">Delete</a>
             </td>
         </tr>
         <?php $i++; ?>

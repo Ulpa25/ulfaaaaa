@@ -39,16 +39,20 @@ if( isset($_POST["submit"])) {
                 <input type="hidden" name="id" value="<?= $brg["id"];?>">
             <ul>
                 <li>
-                    <label for="Nama Barang">Nama Barang: </label>
-                    <input type="text" name="nama_barang" id="Nama Barang" value="<?= $brg["Nama Barang"];?>">
+                    <label for="nb">nama barang: </label>
+                    <input type="text" name="nama_barang" id="nb" value="<?= $brg["nama_barang"];?>">
                 </li>
                 <li>
-                    <label for="Berat">Berat: </label>
-                    <input type="text" name="Berat" id="Berat" value="<?= $brg["Berat"];?>">
+                    <label for="bt">berat: </label>
+                    <input type="text" name="berat" id="bt" value="<?= $brg["berat"];?>">
                 </li>
                 <li>
-                    <label for="Stok">Stok : </label>
-                    <input type="text" name="Stok" id="Stok" value="<?= $brg["Stok"];?>">
+                    <label for="s">stok : </label>
+                    <input type="text" name="stok" id="s" value="<?= $brg["stok"];?>">
+                </li>
+                <li>
+                    <label for="h">harga : </label>
+                    <input type="text" name="harga" id="h" value="<?= $brg["harga"];?>">
                 </li>
                 <button type="submit" name="submit">simpan</button>
             </ul>
